@@ -4,6 +4,7 @@
 TemplateWindow::TemplateWindow(QWidget *parent) : QMainWindow(parent)
 {
     setMinimumSize(760, 550);
+    filename = new QString();
 
     background = new QTextEdit(this);
     background->setStyleSheet("background-color: #595959;");
@@ -42,5 +43,10 @@ void TemplateWindow::newFile(){
 }
 
 void TemplateWindow::openFile(){
-
+    filename =  new QString(QFileDialog::getOpenFileName(
+          this,
+          "Open Document",
+          "/Users/johnyu/Documents/",
+          "Database files (*.db)"));
+    qDebug()<<*filename;
 }

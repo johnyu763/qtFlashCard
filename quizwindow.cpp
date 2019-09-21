@@ -9,6 +9,7 @@
 
 QuizWindow::QuizWindow(const QString &dbname, QWidget *parent) : TemplateWindow(parent){
     srand(time(nullptr));
+    qDebug()<<dbname;
     db = new MDataBase(dbname);
 
 
@@ -18,7 +19,7 @@ QuizWindow::QuizWindow(const QString &dbname, QWidget *parent) : TemplateWindow(
                             padding: 30px;");
     question->setFontPointSize(20);
     question->setReadOnly(true);
-    question->setGeometry(0,65, 760,420);
+    question->setGeometry(0,65, 760,550);
 
 
     answers[0] = new Button(this);

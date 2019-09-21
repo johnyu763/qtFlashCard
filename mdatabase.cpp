@@ -6,7 +6,8 @@
 MDataBase::MDataBase(const QString &filename)
 {
     db = QSqlDatabase::addDatabase("QSQLITE");
-    QString fstring = QString("/Users/johnyu/Documents/qtPractice/QtApp1/%1").arg(filename);
+    QString fstring = QString(filename);
+    qDebug()<<fstring;
     db.setDatabaseName(fstring);
     db.open();
     query = new QSqlQuery(db);

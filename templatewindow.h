@@ -26,6 +26,7 @@ protected:
     QAction *newAction;
     QAction *openAction;
     QMenu *fileMenu;
+    QString *filename;
 
 };
 

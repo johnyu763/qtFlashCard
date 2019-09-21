@@ -8,7 +8,14 @@ MainWindow::MainWindow(QWidget *parent) : TemplateWindow(parent)
 {
 
     quiz = new Button("Quiz Mode", this);
-    qwin = new QuizWindow("first",this);
+    if(*filename!=""){
+        qwin = new QuizWindow(*filename,this);
+    }
+    else{
+        qwin = new QuizWindow("/Users/johnyu/Documents/first.db",this);
+    }
+
+
 
     connect(quiz, SIGNAL(clicked(bool)), this, SLOT(openQuiz()));
 }
